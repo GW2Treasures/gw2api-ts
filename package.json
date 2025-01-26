@@ -9,7 +9,7 @@
     "release": "npm run build -ws && changeset publish"
   },
   "dependencies": {
-    "@changesets/cli": "2.27.11"
+    "@changesets/cli": "2.27.12"
   },
   "devDependencies": {
     "@changeset-bot/changelog": "0.0.4"
