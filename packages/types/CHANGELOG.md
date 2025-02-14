@@ -1,5 +1,12 @@
 # @gw2api/types
 
+## 0.0.23
+
+### Patch Changes
+
+- Allow specifying `page_size` without `page` for paginated endpoints ([#84](https://github.com/GW2Treasures/gw2api-ts/pull/84) by [@darthmaim](https://github.com/darthmaim))
+- Add `SecretsOfTheObscure` and `JanthirWilds` to account access ([#91](https://github.com/GW2Treasures/gw2api-ts/pull/91) by [@darthmaim](https://github.com/darthmaim))
+
 ## 0.0.22
 
 ### Patch Changes
