@@ -29,7 +29,7 @@ interface AccountBase {
   created: string
 
   /** A list of what content this account has access to. */
-  access: ('None' | 'PlayForFree' | 'GuildWars2' | 'HeartOfThorns' | 'PathOfFire' | 'EndOfDragons')[]
+  access: AccountAccess[]
 
   /** True if the player has bought a commander tag. */
   commander: boolean
@@ -46,6 +46,8 @@ interface AccountBase {
   /** The account's personal wvw rank. Requires the additional progression scope. */
   wvw_rank?: number
 }
+
+export type AccountAccess = 'None' | 'PlayForFree' | 'GuildWars2' | 'HeartOfThorns' | 'PathOfFire' | 'EndOfDragons' | 'SecretsOfTheObscure' | 'JanthirWilds';
 
 interface Account_2019_02_21 extends AccountBase {
   /** An ISO-8601 standard timestamp of when the account information last changed as perceived by the API. */
