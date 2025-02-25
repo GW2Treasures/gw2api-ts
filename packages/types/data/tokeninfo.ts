@@ -5,7 +5,7 @@ export type Tokeninfo<Schema extends SchemaVersion = undefined> =
   Schema extends SchemaAfter<'2019-05-22T00:00:00.000Z'> | 'latest' ? Tokeninfo_2019_05_22 :
   TokeninfoBase;
 
-export type Permission = 'account' | 'builds' | 'characters' | 'guilds' | 'inventories' | 'progression' | 'pvp' | 'tradingpost' | 'unlocks' | 'wallet';
+export type Permission = 'account' | 'builds' | 'characters' | 'guilds' | 'inventories' | 'progression' | 'pvp' | 'tradingpost' | 'unlocks' | 'wallet' | 'wvw';
 
 interface TokeninfoBase {
   /** The token id */
