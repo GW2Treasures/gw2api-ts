@@ -1,5 +1,11 @@
 # @gw2api/types
 
+## 0.0.24
+
+### Patch Changes
+
+- Add `wvw` permission ([#94](https://github.com/GW2Treasures/gw2api-ts/pull/94) by [@darthmaim](https://github.com/darthmaim))
+
 ## 0.0.23
 
 ### Patch Changes
