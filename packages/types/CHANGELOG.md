@@ -1,5 +1,12 @@
 # @gw2api/types
 
+## 0.0.25
+
+### Patch Changes
+
+- Add `/v2/characters/:id/sab` endpoint ([#101](https://github.com/GW2Treasures/gw2api-ts/pull/101) by [@darthmaim](https://github.com/darthmaim))
+- Add `/v2/account/dailycrafting` and `/v2/account/dungeons` endpoints ([#99](https://github.com/GW2Treasures/gw2api-ts/pull/99) by [@darthmaim](https://github.com/darthmaim))
+
 ## 0.0.24
 
 ### Patch Changes
