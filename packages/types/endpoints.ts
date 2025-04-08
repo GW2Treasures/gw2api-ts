@@ -403,6 +403,8 @@ export type EndpointType<Url extends KnownEndpoint | (string & {}), Schema exten
   Url extends '/v2/account' ? Account<Schema> :
   Url extends '/v2/account/achievements' ? AccountAchievement[] :
   Url extends '/v2/account/bank' ? AccountBank :
+  Url extends '/v2/account/dailycrafting' ? string[] :
+  Url extends '/v2/account/dungeons' ? string[] :
   Url extends '/v2/account/dyes' ? number[] :
   Url extends '/v2/account/emotes' ? string[] :
   Url extends '/v2/account/gliders' ? number[] :
