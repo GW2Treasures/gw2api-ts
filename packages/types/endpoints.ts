@@ -12,6 +12,7 @@ import type { Achievement } from './data/achievement';
 import type { AchievementCategory } from './data/achievement-category';
 import type { AchievementGroup } from './data/achievement-group';
 import type { Character, CharacterBackstory, CharacterBuildTab, CharacterCore, CharacterCrafting, CharacterEquipment, CharacterEquipmentTab, CharacterInventory, CharacterRecipes, CharacterSkills, CharacterSpecializations, CharacterTraining } from './data/character';
+import type { CharacterSab } from './data/character-sab';
 import type { Color } from './data/color';
 import type { Delivery, Exchange, Listing, Price, TransactionCurrent, TransactionHistoric } from './data/commerce';
 import type { Createsubtoken } from './data/createsubtoken';
@@ -443,6 +444,7 @@ export type EndpointType<Url extends KnownEndpoint | (string & {}), Schema exten
   Url extends `/v2/characters/${string}/equipmenttabs` ? CharacterEquipmentTab[] :
   Url extends `/v2/characters/${string}/inventory` ? CharacterInventory :
   Url extends `/v2/characters/${string}/recipes` ? CharacterRecipes :
+  Url extends `/v2/characters/${string}/sab` ? CharacterSab :
   Url extends `/v2/characters/${string}/skills` ? CharacterSkills :
   Url extends `/v2/characters/${string}/specializations` ? CharacterSpecializations :
   Url extends `/v2/characters/${string}/training` ? CharacterTraining :
