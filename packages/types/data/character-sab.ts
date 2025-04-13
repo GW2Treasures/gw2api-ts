@@ -41,8 +41,8 @@ export type CharacterSabUnlockName =
   | 'medium_health_potion';
 
 export interface CharacterSabSong {
-  id: string,
-  name?: string | (string & {}),
+  id: number,
+  name?: CharacterSabSongName | (string & {}),
 }
 
 export type CharacterSabSongName =
