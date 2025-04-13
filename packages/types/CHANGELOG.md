@@ -1,5 +1,11 @@
 # @gw2api/types
 
+## 0.0.26
+
+### Patch Changes
+
+- Fix SAB song type ([#102](https://github.com/GW2Treasures/gw2api-ts/pull/102) by [@darthmaim](https://github.com/darthmaim))
+
 ## 0.0.25
 
 ### Patch Changes
