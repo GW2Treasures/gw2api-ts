@@ -48,7 +48,7 @@ export interface Skin {
   };
 };
 
-interface DyeSlot {
+export interface DyeSlot {
   color_id: number;
   material: 'leather' | 'cloth' | 'metal';
 }
