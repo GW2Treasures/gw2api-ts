@@ -23,6 +23,7 @@ import type { GuildUpgrade } from './data/guild';
 import type { HomeCat, HomeNode } from './data/home';
 import type { HomesteadDecoration, HomesteadDecorationCategory, HomesteadGlyph } from './data/homestead';
 import type { Item } from './data/item';
+import type { JadeBot } from './data/jadebot';
 import type { Legendaryarmory } from './data/legendaryarmory';
 import type { MaterialCategory } from './data/material';
 import type { Mini } from './data/mini';
@@ -243,6 +244,7 @@ export type KnownBulkExpandedEndpoint =
   | '/v2/homestead/glyphs'
   | '/v2/items'
   | '/v2/itemstats'
+  | '/v2/jadebots'
   | '/v2/legendaryarmory'
   | '/v2/legends'
   | '/v2/maps'
@@ -470,6 +472,7 @@ export type EndpointType<Url extends KnownEndpoint | (string & {}), Schema exten
   Url extends BulkExpandedEndpointUrl<'/v2/homestead/decorations', number> ? BulkExpandedResponseType<'/v2/homestead/decorations', Url, number, HomesteadDecoration> :
   Url extends BulkExpandedEndpointUrl<'/v2/homestead/glyphs', string> ? BulkExpandedResponseType<'/v2/homestead/glyphs', Url, string, HomesteadGlyph> :
   Url extends BulkExpandedEndpointUrl<'/v2/items', number> ? BulkExpandedResponseType<'/v2/items', Url, number, Item<Schema>> :
+  Url extends BulkExpandedEndpointUrl<'/v2/jadebots', number> ? BulkExpandedResponseType<'/v2/jadebots', Url, number, JadeBot> :
   Url extends BulkExpandedEndpointUrl<'/v2/legendaryarmory', number> ? BulkExpandedResponseType<'/v2/legendaryarmory', Url, number, Legendaryarmory> :
   Url extends BulkExpandedEndpointUrl<'/v2/materials', number> ? BulkExpandedResponseType<'/v2/materials', Url, number, MaterialCategory> :
   Url extends BulkExpandedEndpointUrl<'/v2/minis', number> ? BulkExpandedResponseType<'/v2/minis', Url, number, Mini> :
