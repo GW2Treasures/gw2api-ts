@@ -7,12 +7,12 @@ export interface Outfit {
   /** The outfit id */
   id: number,
 
-  /* The outfit name */
+  /** The outfit name */
   name: string;
 
-  /* The outfit icon */
+  /** The outfit icon */
   icon: string;
 
-  /* List of item ids unlocking this outfit */
+  /** List of item ids unlocking this outfit */
   unlock_items: number[];
 }

@@ -7,18 +7,18 @@ export interface Mini {
   /** The mini id */
   id: number,
 
-  /* The mini name */
+  /** The mini name */
   name: string;
 
-  /* A description of how to unlock the mini. */
+  /** A description of how to unlock the mini. */
   unlock?: string;
 
-  /* The mini icon */
+  /** The mini icon */
   icon: string;
 
-  /* The sort order that is used for displaying the mini in-game */
+  /** The sort order that is used for displaying the mini in-game */
   order: number;
 
-  /* The item which unlocks the mini and can be resolved against /v2/items */
+  /** The item which unlocks the mini and can be resolved against /v2/items */
   item_id: number;
 }
