@@ -10,7 +10,7 @@ export interface MailCarrier {
   /** The mail carrier name */
   name: string,
 
-  /** The mini icon */
+  /** The mail carrier icon */
   icon: string,
 
   /** The item id which unlocks this mail carrier. Can be resolved against `/v2/items`. */
