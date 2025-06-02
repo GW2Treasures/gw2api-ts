@@ -4,13 +4,13 @@
  * @see https://wiki.guildwars2.com/wiki/API:2/outfits
  */
 export interface Outfit {
-  /** The mini id */
+  /** The outfit id */
   id: number,
 
-  /* The mini name */
+  /* The outfit name */
   name: string;
 
-  /* The mini icon */
+  /* The outfit icon */
   icon: string;
 
   /* List of item ids unlocking this outfit */
