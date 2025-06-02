@@ -18,6 +18,7 @@ import type { Delivery, Exchange, Listing, Price, TransactionCurrent, Transactio
 import type { Createsubtoken } from './data/createsubtoken';
 import type { Currency } from './data/currency';
 import type { Finisher } from './data/finisher';
+import type { Glider } from './data/glider';
 import type { GuildUpgrade } from './data/guild';
 import type { HomeCat, HomeNode } from './data/home';
 import type { HomesteadDecoration, HomesteadDecorationCategory, HomesteadGlyph } from './data/homestead';
@@ -232,6 +233,7 @@ export type KnownBulkExpandedEndpoint =
   | '/v2/novelties'
   | '/v2/files'
   | '/v2/finishers'
+  | '/v2/gliders'
   | '/v2/guild/permissions'
   | '/v2/guild/upgrades'
   | '/v2/home/cats'
@@ -460,6 +462,7 @@ export type EndpointType<Url extends KnownEndpoint | (string & {}), Schema exten
   Url extends BulkExpandedEndpointUrl<'/v2/colors', number> ? BulkExpandedResponseType<'/v2/colors', Url, number, Color> :
   Url extends BulkExpandedEndpointUrl<'/v2/currencies', number> ? BulkExpandedResponseType<'/v2/currencies', Url, number, Currency> :
   Url extends BulkExpandedEndpointUrl<'/v2/finishers', number> ? BulkExpandedResponseType<'/v2/finishers', Url, number, Finisher> :
+  Url extends BulkExpandedEndpointUrl<'/v2/gliders', number> ? BulkExpandedResponseType<'/v2/gliders', Url, number, Glider> :
   Url extends BulkExpandedEndpointUrl<'/v2/guild/upgrades', number> ? BulkExpandedResponseType<'/v2/guild/upgrades', Url, number, GuildUpgrade> :
   Url extends BulkExpandedEndpointUrl<'/v2/home/cats', number> ? BulkExpandedResponseType<'/v2/home/cats', Url, number, HomeCat> :
   Url extends BulkExpandedEndpointUrl<'/v2/home/nodes', string> ? BulkExpandedResponseType<'/v2/home/nodes', Url, string, HomeNode> :
