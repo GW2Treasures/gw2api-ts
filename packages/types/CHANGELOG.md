@@ -1,5 +1,18 @@
 # @gw2api/types
 
+## 0.0.27
+
+### Patch Changes
+
+- Add `/v2/skiffs` types ([#112](https://github.com/GW2Treasures/gw2api-ts/pull/112) by [@darthmaim](https://github.com/darthmaim))
+- Add `/v2/gliders` types ([#115](https://github.com/GW2Treasures/gw2api-ts/pull/115) by [@darthmaim](https://github.com/darthmaim))
+- Add `/v2/novelties` types ([#118](https://github.com/GW2Treasures/gw2api-ts/pull/118) by [@darthmaim](https://github.com/darthmaim))
+- Add `/v2/itemstats` types ([#119](https://github.com/GW2Treasures/gw2api-ts/pull/119) by [@darthmaim](https://github.com/darthmaim))
+- Add `/v2/finishers` types ([#114](https://github.com/GW2Treasures/gw2api-ts/pull/114) by [@darthmaim](https://github.com/darthmaim))
+- Add `/v2/jadebots` types ([#116](https://github.com/GW2Treasures/gw2api-ts/pull/116) by [@darthmaim](https://github.com/darthmaim))
+- Add `/v2/mailcarriers` types ([#117](https://github.com/GW2Treasures/gw2api-ts/pull/117) by [@darthmaim](https://github.com/darthmaim))
+- Add `/v2/outfits` types ([#109](https://github.com/GW2Treasures/gw2api-ts/pull/109) by [@darthmaim](https://github.com/darthmaim))
+
 ## 0.0.26
 
 ### Patch Changes
