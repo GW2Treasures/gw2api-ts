@@ -1,5 +1,11 @@
 # @gw2api/types
 
+## 0.0.28
+
+### Patch Changes
+
+- Add `Homesteader` as `CraftingDiscipline` ([#120](https://github.com/GW2Treasures/gw2api-ts/pull/120) by [@darthmaim](https://github.com/darthmaim))
+
 ## 0.0.27
 
 ### Patch Changes
