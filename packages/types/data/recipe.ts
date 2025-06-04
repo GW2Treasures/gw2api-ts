@@ -64,7 +64,7 @@ type Recipe_2022_03_09 = Omit<Recipe_Base, 'ingredients'> & {
   }[];
 }
 
-export type CraftingDiscipline = 'Armorsmith' | 'Artificer' | 'Chef' | 'Huntsman' | 'Jeweler' | 'Leatherworker' | 'Scribe' | 'Tailor' | 'Weaponsmith';
+export type CraftingDiscipline = 'Armorsmith' | 'Artificer' | 'Chef' | 'Homesteader' | 'Huntsman' | 'Jeweler' | 'Leatherworker' | 'Scribe' | 'Tailor' | 'Weaponsmith';
 
 // TODO: extend item type?
 export type RecipeType =
