@@ -334,7 +334,6 @@ export type KnownLocalizedEndpoint =
   | '/v2/titles'
   | '/v2/traits'
   | '/v2/wizardsvault'
-  | '/v2/wizardsvault/listings'
   | '/v2/wizardsvault/objectives'
   | '/v2/vendors'
   | '/v2/worlds'
