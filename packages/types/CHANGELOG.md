@@ -1,5 +1,11 @@
 # @gw2api/types
 
+## 0.0.29
+
+### Patch Changes
+
+- Remove `/v2/wizardsvault/listings` from `KnownLocalizedEndpoint` (endpoint is not localized, even though the API reports it as localized) ([#122](https://github.com/GW2Treasures/gw2api-ts/pull/122) by [@darthmaim](https://github.com/darthmaim))
+
 ## 0.0.28
 
 ### Patch Changes
