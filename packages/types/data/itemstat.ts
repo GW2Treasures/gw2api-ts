@@ -13,7 +13,7 @@ export interface ItemStat {
   name: string,
 
   /** The attributes for this itemstat */
-  attribute: ItemStat.Attribute[],
+  attributes: ItemStat.Attribute[],
 }
 
 export namespace ItemStat {
