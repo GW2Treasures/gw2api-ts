@@ -1,5 +1,11 @@
 # @gw2api/types
 
+## 0.0.30
+
+### Patch Changes
+
+- Fix typo in `/v2/itemstats` types ([#124](https://github.com/GW2Treasures/gw2api-ts/pull/124) by [@darthmaim](https://github.com/darthmaim))
+
 ## 0.0.29
 
 ### Patch Changes
