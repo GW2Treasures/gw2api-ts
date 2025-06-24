@@ -21,7 +21,7 @@ export interface Skill {
   chat_link: string;
 
   /** The type of skill */
-  type?: 'Profession' | 'Weapon' | 'Utility' | 'Heal' | 'Elite' | 'Bundle' | 'Toolbelt' | 'Monster' | 'Transform' | 'Pet';
+  type?: Skill.Type,
 
   /** The weapon type that uses this skill */
   weapon_type?: 'None' | 'Dagger' | 'Focus' | 'Staff' | 'Scepter' | 'Sword' | 'Trident' | 'Pistol' | 'Rifle' | 'Shield' | 'Speargun' | 'Greatsword' | 'Mace' | 'Torch' | 'Hammer' | 'Spear' | 'Axe' | 'Warhorn' | 'Shortbow' | 'Longbow';
@@ -33,10 +33,10 @@ export interface Skill {
   slot?: SkillSlot;
 
   /** Attunement of elementalist skills */
-  attunement?: 'Water' | 'Air' | 'Fire' | 'Earth';
+  attunement?: Skill.Attunement;
 
   /** Which secondary attunement is required for this skill to be available (Weaver) */
-  dual_attunement?: 'Earth' | 'Water' | 'Air';
+  dual_attunement?: Skill.Attunement;
 
   /** Category of the skill (e.g. Signet, Cantrip, ...) */
   categories?: string[];
@@ -76,7 +76,7 @@ export interface Skill {
 
   /** Subskills */
   subskills?: {
-    attunement: 'Fire' | 'Earth' | 'Air' | 'Water';
+    attunement: Skill.Attunement;
     form?: 'CelestialAvatar';
     id: number;
   }[];
@@ -88,20 +88,47 @@ export interface Skill {
   traited_facts?: SkillFactTraited[];
 }
 
-type OneToFour = '1' | '2' | '3' | '4';
-type OneToFive = OneToFour | '5';
+export namespace Skill {
+  export type Type = Type.Profession | Type.Weapon | Type.Utility | Type.Heal | Type.Elite | Type.Bundle | Type.Toolbelt | Type.Monster | Type.Transform | Type.Pet;
 
-/** The slot a skill can appear in */
-export type SkillSlot =
-  | `Weapon_${OneToFive}`
-  | 'Heal'
-  | 'Utility'
-  | 'Elite'
-  | `Profession_${OneToFive}`
-  | 'Pet'
-  | 'Toolbelt'
-  | `Downed_${OneToFour}`
-  | 'Transform_1'
+  export namespace Type {
+    export type Profession = 'Profession';
+    export type Weapon = 'Weapon';
+    export type Utility = 'Utility';
+    export type Heal = 'Heal';
+    export type Elite = 'Elite';
+    export type Bundle = 'Bundle';
+    export type Toolbelt = 'Toolbelt';
+    export type Monster = 'Monster';
+    export type Transform = 'Transform';
+    export type Pet = 'Pet';
+  }
+
+  export type Slot = Slot.Downed | Slot.Elite | Slot.Heal | Slot.Pet | Slot.Profession | Slot.Toolbelt | Slot.Transform | Slot.Utility | Slot.Weapon;
+
+  export namespace Slot {
+    type OneToFour = '1' | '2' | '3' | '4';
+    type OneToFive = OneToFour | '5';
+
+    export type Downed = `Downed_${OneToFour}`;
+    export type Elite = 'Elite';
+    export type Heal = 'Heal';
+    export type Pet = 'Pet';
+    export type Profession = `Profession_${OneToFive}`;
+    export type Toolbelt = 'Toolbelt';
+    export type Transform = 'Transform_1';
+    export type Utility = 'Utility';
+    export type Weapon = `Weapon_${OneToFive}`;
+  }
+
+  export type Attunement = 'Fire' | 'Earth' | 'Air' | 'Water';
+}
+
+/**
+ * The slot a skill can appear in
+ * @deprecated Use `Skill.Slot` instead.
+ */
+export type SkillSlot = Skill.Slot;
 
 // TODO: document and split by `type`
 export interface SkillFact {
