@@ -1,5 +1,16 @@
 # @gw2api/types
 
+## 0.0.31
+
+### Patch Changes
+
+- Add types for `/v2/pets` ([#131](https://github.com/GW2Treasures/gw2api-ts/pull/131) by [@darthmaim](https://github.com/darthmaim))
+- Add types for `/v2/traits` ([#129](https://github.com/GW2Treasures/gw2api-ts/pull/129) by [@darthmaim](https://github.com/darthmaim))
+- Add types for `/v2/professions` ([#127](https://github.com/GW2Treasures/gw2api-ts/pull/127) by [@darthmaim](https://github.com/darthmaim))
+- Add types for `/v2/specializations` ([#130](https://github.com/GW2Treasures/gw2api-ts/pull/130) by [@darthmaim](https://github.com/darthmaim))
+- Add types for `/v2/legends` ([#133](https://github.com/GW2Treasures/gw2api-ts/pull/133) by [@darthmaim](https://github.com/darthmaim))
+- Add types for `/v2/races` ([#132](https://github.com/GW2Treasures/gw2api-ts/pull/132) by [@darthmaim](https://github.com/darthmaim))
+
 ## 0.0.30
 
 ### Patch Changes
