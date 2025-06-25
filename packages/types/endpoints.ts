@@ -31,6 +31,7 @@ import type { MaterialCategory } from './data/material';
 import type { Mini } from './data/mini';
 import type { Novelty } from './data/novelty';
 import type { Outfit } from './data/outfit';
+import type { Pet } from './data/pet';
 import type { Profession } from './data/profession';
 import type { Quaggan } from './data/quaggan';
 import type { Recipe } from './data/recipe';
@@ -487,6 +488,7 @@ export type EndpointType<Url extends KnownEndpoint | (string & {}), Schema exten
   Url extends BulkExpandedEndpointUrl<'/v2/minis', number> ? BulkExpandedResponseType<'/v2/minis', Url, number, Mini> :
   Url extends BulkExpandedEndpointUrl<'/v2/novelties', number> ? BulkExpandedResponseType<'/v2/novelties', Url, number, Novelty> :
   Url extends BulkExpandedEndpointUrl<'/v2/outfits', number> ? BulkExpandedResponseType<'/v2/outfits', Url, number, Outfit> :
+  Url extends BulkExpandedEndpointUrl<'/v2/pets', number> ? BulkExpandedResponseType<'/v2/pets', Url, number, Pet> :
   Url extends BulkExpandedEndpointUrl<'/v2/professions', string> ? BulkExpandedResponseType<'/v2/professions', Url, string, Profession<Schema>> :
   Url extends BulkExpandedEndpointUrl<'/v2/quaggans', string> ? BulkExpandedResponseType<'/v2/quaggans', Url, string, Quaggan> :
   Url extends BulkExpandedEndpointUrl<'/v2/recipes', number> ? BulkExpandedResponseType<'/v2/recipes', Url, number, Recipe<Schema>> :
