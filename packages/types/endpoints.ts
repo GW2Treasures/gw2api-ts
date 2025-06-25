@@ -37,6 +37,7 @@ import type { Recipe } from './data/recipe';
 import type { Skiff } from './data/skiffs';
 import type { Skill } from './data/skill';
 import type { Skin } from './data/skin';
+import type { Specialization } from './data/specialization';
 import type { Title } from './data/title';
 import type { Tokeninfo } from './data/tokeninfo';
 import type { Trait } from './data/trait';
@@ -492,6 +493,7 @@ export type EndpointType<Url extends KnownEndpoint | (string & {}), Schema exten
   Url extends BulkExpandedEndpointUrl<'/v2/skiffs', number> ? BulkExpandedResponseType<'/v2/skiffs', Url, number, Skiff> :
   Url extends BulkExpandedEndpointUrl<'/v2/skills', number> ? BulkExpandedResponseType<'/v2/skills', Url, number, Skill> :
   Url extends BulkExpandedEndpointUrl<'/v2/skins', number> ? BulkExpandedResponseType<'/v2/skins', Url, number, Skin> :
+  Url extends BulkExpandedEndpointUrl<'/v2/specializations', number> ? BulkExpandedResponseType<'/v2/specializations', Url, number, Specialization> :
   Url extends BulkExpandedEndpointUrl<'/v2/titles', number> ? BulkExpandedResponseType<'/v2/titles', Url, number, Title> :
   Url extends BulkExpandedEndpointUrl<'/v2/traits', number> ? BulkExpandedResponseType<'/v2/traits', Url, number, Trait> :
   Url extends '/v2/commerce/delivery' ? Delivery :
