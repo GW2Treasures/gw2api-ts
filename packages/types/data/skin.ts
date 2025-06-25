@@ -1,4 +1,5 @@
-import type { Gender, Race } from './character';
+import type { Gender } from './character';
+import type { Race } from './race';
 
 /**
  * Skin as returned from `/v2/skins`
@@ -37,7 +38,7 @@ export interface Skin {
     /** Dye slots */
     dye_slots?: {
       default: DyeSlot[];
-      overrides:  Record<`${Race}${Gender}`, DyeSlot[]>;
+      overrides:  Record<`${Race.Id}${Gender}`, DyeSlot[]>;
     };
 
     /** The subtype of this skin */
