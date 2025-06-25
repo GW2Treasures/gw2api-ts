@@ -2,6 +2,7 @@ import type { SchemaAfter, SchemaVersion } from "../schema";
 import type { ItemStack } from "./item";
 import type { CraftingDiscipline } from "./recipe";
 import type { Profession as ProfessionType } from "./profession";
+import type { Race as RaceType } from "./race";
 
 /**
  * Character info
@@ -120,7 +121,7 @@ interface CharacterCoreBase {
   name: string;
 
   /** The characters race */
-  race: Race;
+  race: RaceType.Id;
 
   /** The characters gender */
   gender: Gender;
@@ -325,7 +326,8 @@ export interface CharacterPvpEquipment {
   sigils: [number | null, number | null, number | null, number | null];
 }
 
-export type Race = 'Asura' | 'Charr' | 'Human' | 'Norn' | 'Sylvary';
+/** @deprecated Use Race.Id instead */
+export type Race = RaceType.Id;
 
 export type Gender = 'Male' | 'Female';
 
