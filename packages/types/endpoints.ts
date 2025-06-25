@@ -39,6 +39,7 @@ import type { Skill } from './data/skill';
 import type { Skin } from './data/skin';
 import type { Title } from './data/title';
 import type { Tokeninfo } from './data/tokeninfo';
+import type { Trait } from './data/trait';
 import type { WizardsVault, WizardsVaultListing, WizardsVaultObjective } from './data/wizardsvault';
 import type { SchemaVersion } from './schema';
 
@@ -492,6 +493,7 @@ export type EndpointType<Url extends KnownEndpoint | (string & {}), Schema exten
   Url extends BulkExpandedEndpointUrl<'/v2/skills', number> ? BulkExpandedResponseType<'/v2/skills', Url, number, Skill> :
   Url extends BulkExpandedEndpointUrl<'/v2/skins', number> ? BulkExpandedResponseType<'/v2/skins', Url, number, Skin> :
   Url extends BulkExpandedEndpointUrl<'/v2/titles', number> ? BulkExpandedResponseType<'/v2/titles', Url, number, Title> :
+  Url extends BulkExpandedEndpointUrl<'/v2/traits', number> ? BulkExpandedResponseType<'/v2/traits', Url, number, Trait> :
   Url extends '/v2/commerce/delivery' ? Delivery :
   Url extends CommerceExchangeUrl<'/v2/commerce/exchange/coins' | '/v2/commerce/exchange/gems'> ? Exchange :
   Url extends BulkExpandedEndpointUrl<'/v2/commerce/listings', number> ? BulkExpandedResponseType<'/v2/commerce/listings', Url, number, Listing> :
