@@ -1,6 +1,7 @@
 import type { SchemaAfter, SchemaVersion } from "../schema";
 import type { ItemStack } from "./item";
 import type { CraftingDiscipline } from "./recipe";
+import type { Profession as ProfessionType } from "./profession";
 
 /**
  * Character info
@@ -76,7 +77,7 @@ export interface CharacterBuildTab {
     name: string;
 
     /** Profession of the build */
-    profession: Profession;
+    profession: ProfessionType.Id;
 
     /** specializations */
     specializations: [CharacterSpecializationSelection, CharacterSpecializationSelection, CharacterSpecializationSelection];
@@ -328,4 +329,5 @@ export type Race = 'Asura' | 'Charr' | 'Human' | 'Norn' | 'Sylvary';
 
 export type Gender = 'Male' | 'Female';
 
-export type Profession = 'Elementalist' | 'Engineer' | 'Guardian' | 'Mesmer' | 'Necromancer' | 'Ranger' | 'Revenant' | 'Thief' | 'Warrior';
+/** @deprecated Use `Profession.Id` instead */
+export type Profession = ProfessionType.Id;

@@ -1,5 +1,9 @@
-import type { Skill, SkillFact, SkillFactTraited } from "./skill";
+import type { Skill, SkillFact, SkillFactTraited } from './skill';
 
+/**
+ * Trait as returned by `/v2/traits`
+ * @see https://wiki.guildwars2.com/wiki/API:2/traits
+ */
 export interface Trait {
   /** The trait id */
   id: number,
