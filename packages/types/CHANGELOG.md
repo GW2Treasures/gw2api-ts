@@ -1,5 +1,12 @@
 # @gw2api/types
 
+## 0.0.32
+
+### Patch Changes
+
+- Remove deprecated enum usage from skill definition (Deprecated enums are still exported and will be removed in a major version) ([#135](https://github.com/GW2Treasures/gw2api-ts/pull/135) by [@darthmaim](https://github.com/darthmaim))
+- Add missing `slot` to traits ([#134](https://github.com/GW2Treasures/gw2api-ts/pull/134) by [@darthmaim](https://github.com/darthmaim))
+
 ## 0.0.31
 
 ### Patch Changes
