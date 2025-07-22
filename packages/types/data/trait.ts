@@ -26,6 +26,9 @@ export interface Trait {
   /** The order (top to bottom) of major traits */
   order: Trait.Order,
 
+  /** The slot of this trait */
+  slot: Trait.Slot,
+
   /** The trait facts */
   facts?: SkillFact[],
 
