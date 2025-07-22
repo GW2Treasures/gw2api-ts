@@ -1,4 +1,4 @@
-import type { Profession } from "./character";
+import type { Profession } from "./profession";
 
 /**
  * Skill as returned by `/v2/skills`
@@ -27,10 +27,10 @@ export interface Skill {
   weapon_type?: 'None' | 'Dagger' | 'Focus' | 'Staff' | 'Scepter' | 'Sword' | 'Trident' | 'Pistol' | 'Rifle' | 'Shield' | 'Speargun' | 'Greatsword' | 'Mace' | 'Torch' | 'Hammer' | 'Spear' | 'Axe' | 'Warhorn' | 'Shortbow' | 'Longbow';
 
   /** Professions that can use this skill */
-  professions?: Profession[];
+  professions?: Profession.Id[];
 
   /** The slot this skill is in */
-  slot?: SkillSlot;
+  slot?: Skill.Slot;
 
   /** Attunement of elementalist skills */
   attunement?: Skill.Attunement;
