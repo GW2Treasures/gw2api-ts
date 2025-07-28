@@ -63,7 +63,7 @@ export type AchievementBit =
 
 export namespace AchievementBit {
   export type Text = { type: 'Text', text: string }
-  export type ItemSkinMinipet = { type: 'Item' | 'Skin' | 'Minipet', id: number }
+  export type ItemSkinMinipet = { type: 'Item' | 'Skin' | 'Minipet', id: number, text?: string }
 }
 
 export type AchievementReward =
