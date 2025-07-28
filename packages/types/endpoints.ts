@@ -290,6 +290,9 @@ export type KnownBulkExpandedEndpoint =
   | '/v2/wvw/objectives'
 
 export type KnownLocalizedEndpoint =
+  | '/v2/account/wizardsvault/daily'
+  | '/v2/account/wizardsvault/special'
+  | '/v2/account/wizardsvault/weekly'
   | '/v2/achievements'
   | '/v2/achievements/categories'
   | '/v2/achievements/groups'
