@@ -1,5 +1,11 @@
 # @gw2api/types
 
+## 0.0.33
+
+### Patch Changes
+
+- Flag account Wizard's Vault objective endpoints as localized ([#137](https://github.com/GW2Treasures/gw2api-ts/pull/137) by [@darthmaim](https://github.com/darthmaim))
+
 ## 0.0.32
 
 ### Patch Changes
