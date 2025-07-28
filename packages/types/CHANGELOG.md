@@ -1,5 +1,11 @@
 # @gw2api/types
 
+## 0.0.34
+
+### Patch Changes
+
+- Add optional `text` to achievement objectives ([#139](https://github.com/GW2Treasures/gw2api-ts/pull/139) by [@darthmaim](https://github.com/darthmaim))
+
 ## 0.0.33
 
 ### Patch Changes
