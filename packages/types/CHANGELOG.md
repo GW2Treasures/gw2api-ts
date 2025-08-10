@@ -1,5 +1,11 @@
 # @gw2api/types
 
+## 0.0.35
+
+### Patch Changes
+
+- Add `Nothing` as possible profession weapon skill `offhand` value ([`d8ed334`](https://github.com/GW2Treasures/gw2api-ts/commit/d8ed3348bcc3642583d641e4b6faeb24085eeb6c) by [@darthmaim](https://github.com/darthmaim))
+
 ## 0.0.34
 
 ### Patch Changes
