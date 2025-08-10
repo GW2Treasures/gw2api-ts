@@ -155,7 +155,7 @@ export namespace Profession {
       slot: Skill.Slot.Weapon,
 
       /** The offhand weapon required to use this skill */
-      offhand?: Type,
+      offhand?: Type | 'Nothing',
 
       /** The elementalist attunement required for this skill */
       attunement?: Skill.Attunement,
