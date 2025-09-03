@@ -1,5 +1,11 @@
 # @gw2api/types
 
+## 0.0.36
+
+### Patch Changes
+
+- Add `MagicDoorSkin` value to item details `unlock_type` ([#147](https://github.com/GW2Treasures/gw2api-ts/pull/147) by [@darthmaim](https://github.com/darthmaim))
+
 ## 0.0.35
 
 ### Patch Changes
