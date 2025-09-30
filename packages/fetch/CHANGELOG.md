@@ -1,5 +1,11 @@
 # @gw2api/fetch
 
+## 0.4.2
+
+### Patch Changes
+
+- Maintenance Release ([#151](https://github.com/GW2Treasures/gw2api-ts/pull/151) by [@darthmaim](https://github.com/darthmaim))
+
 ## 0.4.1
 
 ### Patch Changes
