@@ -27,6 +27,7 @@
     "@gw2api/types": "~0.0.5"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   }
 }
