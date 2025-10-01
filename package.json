@@ -1,17 +1,20 @@
 {
   "name": "gw2api",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
-    "test": "npm test -ws",
-    "release": "npm run build -ws && changeset publish"
+    "test": "pnpm run -r test",
+    "release": "pnpm run -r build && changeset publish"
+  },
+  "engines": {
+    "npm": "please-use-pnpm",
+    "yarn": "please-use-pnpm",
+    "pnpm": "10.17.1"
   },
   "dependencies": {
     "@changesets/cli": "2.29.7"
   },
   "devDependencies": {
     "@changeset-bot/changelog": "0.0.4"
-  }
+  },
+  "packageManager": "pnpm@10.17.1"
 }
