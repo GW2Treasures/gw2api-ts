@@ -21,7 +21,7 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "typescript": "5.9.2"
+    "typescript": "5.9.3"
   },
   "peerDependencies": {
     "@gw2api/types": "~0.0.5"
