@@ -22,13 +22,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v5
+    - uses: pnpm/action-setup@v4
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v5
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm test
+        cache: pnpm
+    - run: pnpm install --frozen-lockfile
+    - run: pnpm run test
 
   success:
     name: Success
@@ -49,38 +50,41 @@ jobs:
       id-token: write
       pull-requests: write
     steps:
-      - uses: actions/create-github-app-token@v2
-        id: generate-token
-        with:
-          app-id: ${{ secrets.GW2T_RELEASE_APP_ID }}
-          private-key: ${{ secrets.GW2T_RELEASE_APP_PRIVATE_KEY }}
+    - uses: actions/create-github-app-token@v2
+      id: generate-token
+      with:
+        app-id: ${{ secrets.GW2T_RELEASE_APP_ID }}
+        private-key: ${{ secrets.GW2T_RELEASE_APP_PRIVATE_KEY }}
 
-      - name: Checkout Repo
-        uses: actions/checkout@v5
-        with:
-          token: ${{ steps.generate-token.outputs.token }}
+    - name: Checkout Repo
+      uses: actions/checkout@v5
+      with:
+        token: ${{ steps.generate-token.outputs.token }}
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v5
-        with:
-          node-version: 24.9.0
-          cache: 'npm'
-          registry-url: 'https://registry.npmjs.org'
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
 
-      - name: Install Dependencies
-        run: npm ci
+    - name: Setup Node.js
+      uses: actions/setup-node@v5
+      with:
+        node-version: 24.9.0
+        cache: pnpm
+        registry-url: 'https://registry.npmjs.org'
 
-      - name: Setup git user
-        run: |
-          git config --global user.email "160784075+gw2treasures-release-bot[bot]@users.noreply.github.com"
-          git config --global user.name "gw2treasures-release-bot[bot]"
+    - name: Install Dependencies
+      run: pnpm install --frozen-lockfile
 
-      - name: Create Release Pull Request
-        uses: changesets/action@v1
-        env:
-          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
-        with:
-          title: New Release
-          commit: Create new release
-          publish: npm run release
-          setupGitUser: false
+    - name: Setup git user
+      run: |
+        git config --global user.email "160784075+gw2treasures-release-bot[bot]@users.noreply.github.com"
+        git config --global user.name "gw2treasures-release-bot[bot]"
+
+    - name: Create Release Pull Request
+      uses: changesets/action@v1
+      env:
+        GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
+      with:
+        title: New Release
+        commit: Create new release
+        publish: pnpm run release
+        setupGitUser: false
