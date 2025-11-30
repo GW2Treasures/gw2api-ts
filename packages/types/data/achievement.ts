@@ -86,6 +86,8 @@ export type MasteryRegion =
   | 'Tundra'   // Icebrood
   | 'Jade'     // EoD
   | 'Sky'      // SotO
+  | 'Wild'     // JW
+  | 'Magic'    // VoE
   | 'Unknown'; // Non whitelisted regions for future expansions
 
 export type AchievementTier = {
