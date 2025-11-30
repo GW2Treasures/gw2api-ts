@@ -1,6 +1,6 @@
 {
   "name": "@gw2api/types",
-  "version": "0.0.37",
+  "version": "0.0.38",
   "description": "TypeScript types for all datastructures used by the Guild Wars 2 API",
   "license": "MIT",
   "repository": {
