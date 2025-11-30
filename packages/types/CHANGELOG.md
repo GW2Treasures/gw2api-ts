@@ -1,5 +1,11 @@
 # @gw2api/types
 
+## 0.0.38
+
+### Patch Changes
+
+- Add new mastery regions ([#170](https://github.com/GW2Treasures/gw2api-ts/pull/170) by [@darthmaim](https://github.com/darthmaim))
+
 ## 0.0.37
 
 ### Patch Changes
