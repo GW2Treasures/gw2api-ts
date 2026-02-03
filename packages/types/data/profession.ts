@@ -7,12 +7,11 @@ import type { Skill } from "./skill";
  * @see https://wiki.guildwars2.com/wiki/API:2/professions
  */
 export type Profession<Schema extends SchemaVersion = undefined> =
-  Schema extends undefined ? _Profession.Default :
-  Schema extends SchemaAfter<'2019-12-19T00:00:00.000Z'> | 'latest' ? _Profession.Schema_2019_12_19 :
-  _Profession.Default;
+  Schema extends undefined ? Profession<Exclude<SchemaVersion, undefined>> :
+  Schema extends SchemaAfter<'2019-12-19T00:00:00.000Z'> | 'latest' ? ProfessionSchema.Schema_2019_12_19 :
+  ProfessionSchema.Default;
 
-
-namespace _Profession {
+namespace ProfessionSchema {
   export interface Default {
     /** The profession id */
     id: Profession.Id,
@@ -47,7 +46,7 @@ namespace _Profession {
      * The profession code for a build template link.
      * @since 2019-12-19T00:00:00.000Z
      */
-    code: number,
+    code: Profession.Code,
 
 
     /**
@@ -61,6 +60,18 @@ namespace _Profession {
 
 export namespace Profession {
   export type Id = 'Guardian' | 'Warrior' | 'Engineer' | 'Ranger' | 'Thief' | 'Elementalist' | 'Mesmer' | 'Necromancer' | 'Revenant';
+
+  export enum Code {
+    Guardian = 1,
+    Warrior = 2,
+    Engineer = 3,
+    Ranger = 4,
+    Thief = 5,
+    Elementalist = 6,
+    Mesmer = 7,
+    Necromancer = 8,
+    Revenant = 9,
+  }
 
   export type Flag = 'NoRacialSkills' | 'NoWeaponSwap';
 

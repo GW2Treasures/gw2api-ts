@@ -1,12 +1,13 @@
 import type { SchemaAfter, SchemaVersion } from "../schema";
 
-export type AccountHomeCat<Schema extends SchemaVersion> =
-  Schema extends undefined ? AccountHomeCat_Base :
-  Schema extends SchemaAfter<'2019-03-22T00:00:00.000Z'> ? number :
-  AccountHomeCat_Base;
+export type AccountHomeCat<Schema extends SchemaVersion = undefined> =
+  Schema extends undefined ? AccountHomeCat<Exclude<SchemaVersion, undefined>> :
+  Schema extends SchemaAfter<'2019-03-22T00:00:00.000Z'> | 'latest' ? number :
+  AccountHomeCatSchema.Legacy;
 
-interface AccountHomeCat_Base {
-  id: number;
-
-  hint: string;
+namespace AccountHomeCatSchema {
+  export interface Legacy {
+    id: number;
+    hint: string;
+  }
 }

@@ -5,7 +5,7 @@ import type { SchemaAfter, SchemaVersion } from "../schema";
  * @see https://wiki.guildwars2.com/wiki/API:2/recipes
  */
 export type Recipe<Schema extends SchemaVersion = undefined> =
-  Schema extends undefined ? Recipe_Base :
+  Schema extends undefined ? Recipe<Exclude<SchemaVersion, undefined>> :
   Schema extends SchemaAfter<'2022-03-09T02:00:00.000Z'> | 'latest' ? Recipe_2022_03_09 :
   Recipe_Base;
 
