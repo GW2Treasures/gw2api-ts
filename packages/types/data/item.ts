@@ -58,7 +58,7 @@ type ItemBase = {
     suffix?: string;
     suffix_item_id?: number;
     type?: 'Axe' | 'SmallBundle' | 'Hammer' | 'Generic' | 'Staff' | 'Coat' | 'Leggings' | 'Boots' | 'Helm' | 'Shoulders' | 'Gloves' | 'HelmAquatic' | 'LargeBundle' | 'Immediate' | 'Transmutation' | 'Utility' | 'Booze' | 'Food' | 'Default' | 'Unlock' | 'GiftBox' | 'Amulet' | 'Accessory' | 'Ring' | 'Trident' | 'Scepter' | 'Focus' | 'ShortBow' | 'Warhorn' | 'Torch' | 'LongBow' | 'Pistol' | 'Rifle' | 'Speargun' | 'Dagger' | 'Sword' | 'Mace' | 'Shield' | 'Greatsword' | 'Harpoon' | 'ContainerKey' | 'Salvage' | 'Halloween' | 'ContractNpc' | 'OpenUI' | 'UpgradeRemoval' | 'RentableContractNpc' | 'Foraging' | 'Logging' | 'Mining' | 'Gem' | 'Sigil' | 'Rune' | 'AppearanceChange' | 'UnlimitedConsumable' | 'Toy' | 'ToyTwoHanded' | 'TeleportToFriend' | 'Currency' | 'RandomUnlock' | 'MountRandomUnlock' | 'Bait' | 'Lure';
-    unlock_type?: 'CraftingRecipe' | 'Content' | 'BagSlot' | 'BankTab' | 'Dye' | 'CollectibleCapacity' | 'Outfit' | 'GliderSkin' | 'SharedSlot' | 'Champion' | 'Minipet' | 'Ms' | 'GearLoadoutTab' | 'BuildLibrarySlot' | 'BuildLoadoutTab' | 'JadeBotSkin' | 'MagicDoorSkin';
+    unlock_type?: 'CraftingRecipe' | 'Content' | 'BagSlot' | 'BankTab' | 'Dye' | 'CollectibleCapacity' | 'Outfit' | 'GliderSkin' | 'SharedSlot' | 'Champion' | 'Minipet' | 'Ms' | 'GearLoadoutTab' | 'BuildLibrarySlot' | 'BuildLoadoutTab' | 'JadeBotSkin' | 'MagicDoorSkin' | 'WardrobeTemplateTab';
     vendor_ids?: number[];
     weight_class?: 'Clothing' | 'Light' | 'Medium' | 'Heavy';
   };
