@@ -1,5 +1,11 @@
 # @gw2api/types
 
+## 0.0.41
+
+### Patch Changes
+
+- Add `WardrobeTemplateTab` as new item unlock type ([#186](https://github.com/GW2Treasures/gw2api-ts/pull/186) by [@darthmaim](https://github.com/darthmaim))
+
 ## 0.0.40
 
 ### Patch Changes
