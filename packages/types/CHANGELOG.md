@@ -1,5 +1,14 @@
 # @gw2api/types
 
+## 0.0.39
+
+### Patch Changes
+
+- Fix type of `AccountHomeCat` with `latest` schema (would resolve to legacy type) ([#182](https://github.com/GW2Treasures/gw2api-ts/pull/182) by [@darthmaim](https://github.com/darthmaim))
+- Default to union of all schemas if schema is `undefined` ([#182](https://github.com/GW2Treasures/gw2api-ts/pull/182) by [@darthmaim](https://github.com/darthmaim))
+- Fix `Character` type for latest schema (incorrectly included `CharacterEquipmentTab`) ([#182](https://github.com/GW2Treasures/gw2api-ts/pull/182) by [@darthmaim](https://github.com/darthmaim))
+- Add `Profession.Code` enum ([#182](https://github.com/GW2Treasures/gw2api-ts/pull/182) by [@darthmaim](https://github.com/darthmaim))
+
 ## 0.0.38
 
 ### Patch Changes
