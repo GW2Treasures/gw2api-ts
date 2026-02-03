@@ -17,7 +17,7 @@ export type Character<Schema extends SchemaVersion = undefined> =
 
 namespace __Character {
   // always included. Some of these are `Partial<>` because they are only included with some scopes. This should be typed in the future if the scopes are known...
-  type Base<Schema extends SchemaVersion> = CharacterBackstory & CharacterCore<Schema> & CharacterCrafting & Partial<CharacterEquipment> & Partial<CharacterInventory> & Partial<CharacterRecipes> & Partial<CharacterTraining>;
+  type Base<Schema extends SchemaVersion> = CharacterBackstory & CharacterCore<Schema> & CharacterCrafting & Partial<CharacterEquipment<Schema>> & Partial<CharacterInventory> & Partial<CharacterRecipes> & Partial<CharacterTraining>;
   // Schema version 2019-12-19T00:00:00.000Z or later, this endpoint will include v2/characters/:id/buildtabs and v2/characters/:id/equipmenttabs and will no longer include v2/characters/:id/skills and v2/characters/:id/specializations
   export type Schema_2019_12_19<Schema extends SchemaVersion> = Base<Schema> & { build_tabs?: CharacterBuildTab[], equipment_tabs?: CharacterEquipmentTab[] } & CharacterExtras_2019_12_19;
   export type Schema_Initial<Schema extends SchemaVersion> = Base<Schema> & Partial<CharacterSpecializations> & CharacterExtras;
