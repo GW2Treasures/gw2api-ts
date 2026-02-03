@@ -1,5 +1,11 @@
 # @gw2api/types
 
+## 0.0.40
+
+### Patch Changes
+
+- Fix undefined schema version for `Character.equipment` ([#184](https://github.com/GW2Treasures/gw2api-ts/pull/184) by [@darthmaim](https://github.com/darthmaim))
+
 ## 0.0.39
 
 ### Patch Changes
