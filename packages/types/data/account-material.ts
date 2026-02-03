@@ -1,4 +1,3 @@
-import type { ItemStack } from './item';
 import type { MaterialStack } from './material';
 
 /**

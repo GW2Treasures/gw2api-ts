@@ -4,11 +4,10 @@ import type { SchemaAfter, SchemaVersion } from "../schema";
  * AchievementCategory as returned from `/v2/achievements/categories`
  * @see https://wiki.guildwars2.com/wiki/API:2/achievements/categories
  */
-export type AchievementCategory<Schema extends SchemaVersion> =
-  Schema extends undefined ? AchievementCategory_Base :
+export type AchievementCategory<Schema extends SchemaVersion = undefined> =
+  Schema extends undefined ? AchievementCategory<Exclude<SchemaVersion, undefined>> :
   Schema extends SchemaAfter<'2022-03-23T19:00:00.000Z'> | 'latest' ? AchievementCategory_2022_03_23 :
   AchievementCategory_Base;
-
 
 interface AchievementCategory_Base {
   /** The id of the achievement category */

@@ -11,13 +11,17 @@ import type { Race as RaceType } from "./race";
  * @see https://wiki.guildwars2.com/wiki/API:2/characters
  */
 export type Character<Schema extends SchemaVersion = undefined> =
+  Schema extends undefined ? Character<Exclude<SchemaVersion, undefined>>:
+  Schema extends SchemaAfter<'2019-12-19T00:00:00.000Z'> | 'latest' ? __Character.Schema_2019_12_19<Schema> :
+  __Character.Schema_Initial<Schema>;
+
+namespace __Character {
   // always included. Some of these are `Partial<>` because they are only included with some scopes. This should be typed in the future if the scopes are known...
-  CharacterBackstory & CharacterCore<Schema> & CharacterCrafting & Partial<CharacterEquipment> & Partial<CharacterInventory> & Partial<CharacterRecipes> & Partial<CharacterTraining> & (
-    // Schema version 2019-12-19T00:00:00.000Z or later, this endpoint will include v2/characters/:id/buildtabs and v2/characters/:id/equipmenttabs and will no longer include v2/characters/:id/skills and v2/characters/:id/specializations
-    Schema extends undefined ? (Partial<CharacterSkills> & Partial<CharacterSpecializations> & Partial<CharacterExtras>):
-    Schema extends SchemaAfter<'2019-12-19T00:00:00.000Z'> | 'latest' ? ({ build_tabs?: CharacterBuildTab[], equipment_tabs?: CharacterEquipmentTab[] } & Partial<CharacterEquipmentTab> & CharacterExtras_2019_12_19) :
-    (Partial<CharacterSkills> & Partial<CharacterSpecializations> & CharacterExtras)
-  );
+  type Base<Schema extends SchemaVersion> = CharacterBackstory & CharacterCore<Schema> & CharacterCrafting & Partial<CharacterEquipment> & Partial<CharacterInventory> & Partial<CharacterRecipes> & Partial<CharacterTraining>;
+  // Schema version 2019-12-19T00:00:00.000Z or later, this endpoint will include v2/characters/:id/buildtabs and v2/characters/:id/equipmenttabs and will no longer include v2/characters/:id/skills and v2/characters/:id/specializations
+  export type Schema_2019_12_19<Schema extends SchemaVersion> = Base<Schema> & { build_tabs?: CharacterBuildTab[], equipment_tabs?: CharacterEquipmentTab[] } & CharacterExtras_2019_12_19;
+  export type Schema_Initial<Schema extends SchemaVersion> = Base<Schema> & Partial<CharacterSpecializations> & CharacterExtras;
+}
 
 interface CharacterExtras {
   /** Trained WvW abilities  */
@@ -112,7 +116,7 @@ export interface CharacterBuildTab {
  * @see https://wiki.guildwars2.com/wiki/API:2/characters/:id/core
  */
 export type CharacterCore<Schema extends SchemaVersion = undefined> =
-  Schema extends undefined ? CharacterCoreBase :
+  Schema extends undefined ? CharacterCore<Exclude<SchemaVersion, undefined>> :
   Schema extends SchemaAfter<'2019-02-21T00:00:00.000Z'> | 'latest' ? CharacterCore_2019_02_21 :
   CharacterCoreBase;
 
@@ -182,7 +186,7 @@ export interface CharacterEquipment<Schema extends SchemaVersion = undefined> {
 }
 
 export type CharacterEquipmentEntry<Schema extends SchemaVersion = undefined> =
-  Schema extends undefined ? CharacterEquipmentEntryBase :
+  Schema extends undefined ? CharacterEquipmentEntry<Exclude<SchemaVersion, undefined>> :
   Schema extends SchemaAfter<'2019-12-19T00:00:00.000Z'> | 'latest' ? CharacterEquipmentEntry_2019_12_19 :
   CharacterEquipmentEntryBase;
 
