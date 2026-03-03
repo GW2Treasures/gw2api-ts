@@ -11,7 +11,7 @@
     "pnpm": "10.30.3"
   },
   "dependencies": {
-    "@changesets/cli": "2.29.8"
+    "@changesets/cli": "2.30.0"
   },
   "devDependencies": {
     "@changeset-bot/changelog": "0.0.4"
