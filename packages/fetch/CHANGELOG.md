@@ -1,5 +1,15 @@
 # @gw2api/fetch
 
+## 0.5.0
+
+### Minor Changes
+
+- Publish as ESM ([#213](https://github.com/GW2Treasures/gw2api-ts/pull/213) by [@darthmaim](https://github.com/darthmaim))
+
+### Patch Changes
+
+- Correctly handle `undefined` options ([#203](https://github.com/GW2Treasures/gw2api-ts/pull/203) by [@renovate](https://github.com/apps/renovate))
+
 ## 0.4.2
 
 ### Patch Changes

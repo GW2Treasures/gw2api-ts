@@ -1,6 +1,6 @@
 {
   "name": "@gw2api/fetch",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "Tiny wrapper around fetch that returns type-safe responses",
   "type": "module",
   "license": "MIT",
