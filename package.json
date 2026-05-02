@@ -2,6 +2,7 @@
   "name": "gw2api",
   "private": true,
   "scripts": {
+    "build": "pnpm run -r build",
     "test": "pnpm run -r test",
     "release": "pnpm run -r build && changeset publish"
   },

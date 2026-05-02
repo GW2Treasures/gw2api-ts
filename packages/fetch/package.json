@@ -2,9 +2,17 @@
   "name": "@gw2api/fetch",
   "version": "0.4.2",
   "description": "Tiny wrapper around fetch that returns type-safe responses",
+  "type": "module",
   "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "author": "darthmaim",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GW2Treasures/gw2api-ts.git",
@@ -18,14 +26,21 @@
   ],
   "scripts": {
     "test": "tsc --noEmit",
-    "build": "tsc"
+    "build": "tsdown"
   },
   "devDependencies": {
+    "@arethetypeswrong/core": "0.18.2",
+    "@types/node": "24.12.2",
+    "publint": "0.3.18",
+    "tsdown": "0.21.10",
     "typescript": "6.0.3"
   },
   "peerDependencies": {
     "@gw2api/types": "~0.0.5"
   },
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public",
     "provenance": true
