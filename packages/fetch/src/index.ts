@@ -12,7 +12,10 @@ export async function fetchGw2Api<
   Url extends KnownEndpoint | (string & {}),
   Schema extends SchemaVersion = undefined
 >(
-  ...[endpoint, options]: Args<Url, Schema>
+  ...[
+    endpoint,
+    options = {} as FetchGw2ApiOptions<Schema> & OptionsByEndpoint<Url> & FetchOptions
+  ]: Args<Url, Schema>
 ): Promise<EndpointType<Url, Schema>> {
   const url = new URL(endpoint, 'https://api.guildwars2.com/');
 
@@ -53,7 +56,7 @@ export async function fetchGw2Api<
   await options.onResponse?.(response);
 
   // check if the response is json (`application/json; charset=utf-8`)
-  const isJson = response.headers.get('content-type').startsWith('application/json');
+  const isJson = response.headers.get('content-type')?.startsWith('application/json');
 
   // censor access token in url to not leak it in error messages
   const erroredUrl = hasAccessToken(options)
@@ -66,7 +69,7 @@ export async function fetchGw2Api<
     if(isJson) {
       const error: unknown = await response.json();
 
-      if(typeof error === 'object' && 'text' in error && typeof error.text === 'string') {
+      if(error && typeof error === 'object' && 'text' in error && typeof error.text === 'string') {
         throw new Gw2ApiError(`The GW2 API call to '${erroredUrl}' returned ${response.status} ${response.statusText}: ${error.text}.`, response);
       }
     }
@@ -122,10 +125,10 @@ export class Gw2ApiError extends Error {
   }
 }
 
-function hasLanguage(options: OptionsByEndpoint<any>): options is LocalizedOptions {
-  return 'language' in options;
+function hasLanguage(options: OptionsByEndpoint<any>): options is Required<LocalizedOptions> {
+  return 'language' in options && !!options.language;
 }
 
-function hasAccessToken(options: OptionsByEndpoint<any>): options is AuthenticatedOptions {
-  return 'accessToken' in options;
+function hasAccessToken(options: OptionsByEndpoint<any>): options is Required<AuthenticatedOptions> {
+  return 'accessToken' in options && !!options.accessToken;
 }

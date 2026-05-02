@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
+    "rootDir": "./src",
+    "outDir": "./dist",
     "declaration": true,
     "moduleResolution": "bundler",
     "module": "esnext",
