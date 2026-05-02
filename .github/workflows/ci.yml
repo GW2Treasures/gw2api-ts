@@ -54,7 +54,7 @@ jobs:
     - uses: actions/create-github-app-token@v3
       id: generate-token
       with:
-        app-id: ${{ secrets.GW2T_RELEASE_APP_ID }}
+        client-id: ${{ secrets.GW2T_RELEASE_APP_ID }}
         private-key: ${{ secrets.GW2T_RELEASE_APP_PRIVATE_KEY }}
 
     - name: Checkout Repo
