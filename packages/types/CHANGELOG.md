@@ -1,5 +1,11 @@
 # @gw2api/types
 
+## 0.0.42
+
+### Patch Changes
+
+- Add bulk types for `/v2/account/achievements` ([#231](https://github.com/GW2Treasures/gw2api-ts/pull/231) by [@darthmaim](https://github.com/darthmaim))
+
 ## 0.0.41
 
 ### Patch Changes
