@@ -230,6 +230,7 @@ export type KnownUnauthorizedEndpoint =
   | '/v2/wvw/upgrades'
 
 export type KnownBulkExpandedEndpoint =
+  | '/v2/account/achievements'
   | '/v2/achievements'
   | '/v2/achievements/categories'
   | '/v2/achievements/groups'
@@ -425,6 +426,7 @@ export type OptionsByEndpoint<Endpoint extends string> =
 export type EndpointType<Url extends KnownEndpoint | (string & {}), Schema extends SchemaVersion = undefined> =
   Url extends '/v2/account' ? Account<Schema> :
   Url extends '/v2/account/achievements' ? AccountAchievement[] :
+  Url extends BulkExpandedEndpointUrl<'/v2/account/achievements', number> ? BulkExpandedResponseType<'/v2/account/achievements', Url, number, AccountAchievement> :
   Url extends '/v2/account/bank' ? AccountBank :
   Url extends '/v2/account/dailycrafting' ? string[] :
   Url extends '/v2/account/dungeons' ? string[] :
