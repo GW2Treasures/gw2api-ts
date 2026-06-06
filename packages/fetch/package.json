@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@arethetypeswrong/core": "0.18.3",
-    "@types/node": "24.12.4",
+    "@types/node": "24.13.1",
     "publint": "0.3.21",
     "tsdown": "0.22.2",
     "typescript": "6.0.3"
