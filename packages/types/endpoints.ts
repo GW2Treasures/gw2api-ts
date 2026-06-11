@@ -422,8 +422,7 @@ export type OptionsByEndpoint<Endpoint extends string> =
   Endpoint extends KnownEndpoint | BulkExpandedEndpointUrl<KnownBulkExpandedEndpoint, string | number> ? Options :
   Partial<AuthenticatedOptions & LocalizedOptions>
 
-// result type for endpoint
-export type EndpointType<Url extends KnownEndpoint | (string & {}), Schema extends SchemaVersion = undefined> =
+type EndpointTypeAccount<Url extends string, Schema extends SchemaVersion> =
   Url extends '/v2/account' ? Account<Schema> :
   Url extends '/v2/account/achievements' ? AccountAchievement[] :
   Url extends BulkExpandedEndpointUrl<'/v2/account/achievements', number> ? BulkExpandedResponseType<'/v2/account/achievements', Url, number, AccountAchievement> :
@@ -460,6 +459,9 @@ export type EndpointType<Url extends KnownEndpoint | (string & {}), Schema exten
   Url extends '/v2/account/wizardsvault/special' ? AccountWizardsVaultSpecialObjectives :
   Url extends '/v2/account/wizardsvault/weekly' ? AccountWizardsVaultMetaObjectives :
   Url extends '/v2/account/worldbosses' ? string[] :
+  unknown;
+
+type EndpointTypeCharacters<Url extends string, Schema extends SchemaVersion> =
   Url extends `/v2/characters/${string}/backstory` ? CharacterBackstory :
   Url extends `/v2/characters/${string}/buildtabs` ? CharacterBuildTab[] :
   Url extends `/v2/characters/${string}/core` ? CharacterCore<Schema> :
@@ -473,7 +475,9 @@ export type EndpointType<Url extends KnownEndpoint | (string & {}), Schema exten
   Url extends `/v2/characters/${string}/specializations` ? CharacterSpecializations :
   Url extends `/v2/characters/${string}/training` ? CharacterTraining :
   Url extends BulkExpandedEndpointUrl<'/v2/characters', string> ? BulkExpandedResponseType<'/v2/characters', Url, string, Character<Schema>> :
-  Url extends CreateSubtokenUrl<'/v2/createsubtoken'> ? Createsubtoken :
+  unknown;
+
+type EndpointTypeBulk<Url extends string, Schema extends SchemaVersion> =
   Url extends BulkExpandedEndpointUrl<'/v2/achievements/categories', number> ? BulkExpandedResponseType<'/v2/achievements/categories', Url, number, AchievementCategory<Schema>> :
   Url extends BulkExpandedEndpointUrl<'/v2/achievements/groups', number> ? BulkExpandedResponseType<'/v2/achievements/groups', Url, number, AchievementGroup> :
   Url extends BulkExpandedEndpointUrl<'/v2/achievements', number> ? BulkExpandedResponseType<'/v2/achievements', Url, number, Achievement> :
@@ -508,6 +512,12 @@ export type EndpointType<Url extends KnownEndpoint | (string & {}), Schema exten
   Url extends BulkExpandedEndpointUrl<'/v2/specializations', number> ? BulkExpandedResponseType<'/v2/specializations', Url, number, Specialization> :
   Url extends BulkExpandedEndpointUrl<'/v2/titles', number> ? BulkExpandedResponseType<'/v2/titles', Url, number, Title> :
   Url extends BulkExpandedEndpointUrl<'/v2/traits', number> ? BulkExpandedResponseType<'/v2/traits', Url, number, Trait> :
+  // fallback for all bulk expanded urls
+  Url extends BulkExpandedEndpointUrl<KnownBulkExpandedEndpoint, string | number> ? BulkExpandedResponseType<KnownBulkExpandedEndpoint, Url, string | number, unknown> :
+  // fallback for all other urls
+  unknown;
+
+type EndpointTypeCommerce<Url extends string> =
   Url extends '/v2/commerce/delivery' ? Delivery :
   Url extends CommerceExchangeUrl<'/v2/commerce/exchange/coins' | '/v2/commerce/exchange/gems'> ? Exchange :
   Url extends BulkExpandedEndpointUrl<'/v2/commerce/listings', number> ? BulkExpandedResponseType<'/v2/commerce/listings', Url, number, Listing> :
@@ -516,13 +526,24 @@ export type EndpointType<Url extends KnownEndpoint | (string & {}), Schema exten
   Url extends PaginatedEndpointUrl<'/v2/commerce/transactions/current/sells'> ? TransactionCurrent[] :
   Url extends PaginatedEndpointUrl<'/v2/commerce/transactions/history/buys'> ? TransactionHistoric[] :
   Url extends PaginatedEndpointUrl<'/v2/commerce/transactions/history/sells'> ? TransactionHistoric[] :
-  Url extends '/v2/tokeninfo' ? Tokeninfo<Schema> :
+  unknown;
+
+type EndpointTypeWizardsVault<Url extends string> =
   Url extends '/v2/wizardsvault' ? WizardsVault :
   Url extends BulkExpandedEndpointUrl<'/v2/wizardsvault/listings', number> ? BulkExpandedResponseType<'/v2/wizardsvault/listings', Url, number, WizardsVaultListing> :
   Url extends BulkExpandedEndpointUrl<'/v2/wizardsvault/objectives', number> ? BulkExpandedResponseType<'/v2/wizardsvault/objectives', Url, number, WizardsVaultObjective> :
-  // fallback for all bulk expanded urls
-  Url extends BulkExpandedEndpointUrl<KnownBulkExpandedEndpoint, string | number> ? BulkExpandedResponseType<KnownBulkExpandedEndpoint, Url, string | number, unknown> :
-  // fallback for all other urls
   unknown;
+
+// result type for endpoint
+// The result types are split into multiple smaller types and matched by prefix
+// to avoid exceeding typescripts stack depth limit when evaluating the main EndpointType.
+export type EndpointType<Url extends KnownEndpoint | (string & {}), Schema extends SchemaVersion = undefined> =
+  Url extends '/v2/account' | `/v2/account/${string}` ? EndpointTypeAccount<Url, Schema> :
+  Url extends '/v2/characters' | `/v2/characters?${string}` | `/v2/characters/${string}` ? EndpointTypeCharacters<Url, Schema> :
+  Url extends `/v2/commerce/${string}` ? EndpointTypeCommerce<Url> :
+  Url extends CreateSubtokenUrl<'/v2/createsubtoken'> ? Createsubtoken :
+  Url extends '/v2/tokeninfo' ? Tokeninfo<Schema> :
+  Url extends '/v2/wizardsvault' | `/v2/wizardsvault/${string}` ? EndpointTypeWizardsVault<Url> :
+  EndpointTypeBulk<Url, Schema>;
 
 export type ValidateEndpointUrl<T extends string> = unknown extends EndpointType<T> ? 'unknown endpoint url' : T;
