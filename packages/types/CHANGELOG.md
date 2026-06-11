@@ -1,5 +1,11 @@
 # @gw2api/types
 
+## 0.0.43
+
+### Patch Changes
+
+- Fix TypeScript excessive stack depth ([#239](https://github.com/GW2Treasures/gw2api-ts/pull/239) by [@darthmaim](https://github.com/darthmaim))
+
 ## 0.0.42
 
 ### Patch Changes
