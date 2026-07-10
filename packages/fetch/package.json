@@ -29,7 +29,7 @@
     "build": "tsdown"
   },
   "devDependencies": {
-    "@arethetypeswrong/core": "0.18.4",
+    "@arethetypeswrong/core": "0.18.5",
     "@types/node": "24.13.3",
     "publint": "0.3.21",
     "tsdown": "0.22.4",
